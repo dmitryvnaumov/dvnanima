@@ -27,7 +27,9 @@ Render the Shorts-style scene:
 Higher quality:
 ```bash
 manim -pqh neutrino3d.py NeutrinoOscillationShorts -o output_name
+```
 
 Lower quality:
 ```bash
 manim -pql neutrino3d.py NeutrinoOscillationShorts -o output_name
+```
