@@ -2,7 +2,7 @@
 
 Manim scenes for visualizing **3-flavor neutrino oscillations** using a
 barycentric (ternary) probability triangle: the point position encodes
-(Pe, Pμ, Pτ).
+($P_e$, $P_\mu$, $P_\tau$).
 
 ---
 
@@ -14,22 +14,18 @@ barycentric (ternary) probability triangle: the point position encodes
 
 - `osc_prob.py`  
   Pure numerical backend: PMNS matrix, phase evolution in
-  x = L / Losc(21), and probability computation.
+  $x = L / L_{osc}^{21}$, and probability computation.
 
 - `plot_probabilities.py`  
   (Optional) test the probabilities with matplotlib (required) visualization.
+
+- `run.cfg`
+   List of parameters
 ---
 
 ## How to run
 
-Render the Shorts-style scene:
-
-Higher quality:
 ```bash
 manim -pqh neutrino3d.py NeutrinoOscillationShorts -o output_name
 ```
 
-Lower quality:
-```bash
-manim -pql neutrino3d.py NeutrinoOscillationShorts -o output_name
-```
