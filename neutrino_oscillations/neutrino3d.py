@@ -2,30 +2,84 @@ from manim import *
 import numpy as np
 from osc_prob import prob_row_x 
 
-# Настройки для вертикального формата Shorts
-config.frame_width = 9
-config.frame_height = 16
-config.pixel_width = 1080
-config.pixel_height = 1920
+from pathlib import Path
+import configparser
 
-class NeutrinoOscillationShorts_e(Scene):
+def load_cfg(path: str = "run.cfg") -> dict:
+    cfg = configparser.ConfigParser(inline_comment_prefixes=(";",))
+    cfg.read(Path(path))
+    # helpers
+    def get(section, key, cast=str, fallback=None):
+        if fallback is None:
+            return cast(cfg[section][key])
+        return cast(cfg.get(section, key, fallback=str(fallback)))
+
+    # Manim params (set early)
+    manim_params = {
+        "pixel_width":  get("manim", "pixel_width", int),
+        "pixel_height": get("manim", "pixel_height", int),
+        "frame_width":  get("manim", "frame_width", float),
+        "frame_height": get("manim", "frame_height", float),
+        "background_color": get("manim", "background_color", str),
+    }
+
+    # Oscillation params
+    osc = {
+        "initial_flavor": get("osc", "initial_flavor", str),
+        "ordering":       get("osc", "ordering", str),
+        "theta12_deg":    get("osc", "theta12_deg", float),
+        "theta23_deg":    get("osc", "theta23_deg", float),
+        "theta13_deg":    get("osc", "theta13_deg", float),
+        "delta_cp_deg":   get("osc", "delta_cp_deg", float),
+        "dm21":           get("osc", "dm21", float),
+        "dm31abs":        get("osc", "dm31abs", float),
+        "n_periods":      get("osc", "n_periods", float),
+        "run_time":       get("osc", "run_time", float),
+        "n_grid":         get("osc", "n_grid", int),
+    }
+
+    ui = {
+        "triangle_scale":    get("ui", "triangle_scale", float, 1.15),
+        "triangle_shift_up": get("ui", "triangle_shift_up", float, 0.4),
+        "trace_time":        get("ui", "trace_time", float, 3.0),
+        "ghost_time":        get("ui", "ghost_time", float, 8.0),
+        "trace_width":       get("ui", "trace_width", float, 5.0),
+        "ghost_width":       get("ui", "ghost_width", float, 12.0),
+        "ghost_opacity":     get("ui", "ghost_opacity", float, 0.10),
+        "dot_radius":        get("ui", "dot_radius", float, 0.12),
+    }
+
+    return {"manim": manim_params, "osc": osc, "ui": ui}
+
+CFG = load_cfg("run.cfg")
+
+config.pixel_width  = CFG["manim"]["pixel_width"]
+config.pixel_height = CFG["manim"]["pixel_height"]
+config.frame_width  = CFG["manim"]["frame_width"]
+config.frame_height = CFG["manim"]["frame_height"]
+
+
+class NeutrinoOscillationShorts(Scene):
     def construct(self):
-        self.camera.background_color = "#05050a"
+        self.camera.background_color = CFG["manim"]["background_color"]
 
-        # -------------------- user parameters --------------------
-        initial_flavor = "e"          # "e", "mu", "tau"
-        ordering = "NO"               # "NO" or "IO"
+        p = CFG["osc"]
+        ui = CFG["ui"]
 
-        th12 = np.deg2rad(33.0)
-        th23 = np.deg2rad(45.0)
-        th13 = np.deg2rad(8.6)
-        dcp  = np.deg2rad(180.0)
+        initial_flavor = p["initial_flavor"]
+        ordering = p["ordering"]
 
-        dm21    = 7.5e-5
-        dm31abs = 2.5e-3
+        th12 = np.deg2rad(p["theta12_deg"])
+        th23 = np.deg2rad(p["theta23_deg"])
+        th13 = np.deg2rad(p["theta13_deg"])
+        dcp  = np.deg2rad(p["delta_cp_deg"])
 
-        n_periods = 3.0
-        run_time = 58.0 
+        dm21    = p["dm21"]
+        dm31abs = p["dm31abs"]
+
+        n_periods = p["n_periods"]
+        run_time  = p["run_time"]
+        n_grid    = p["n_grid"]
 
         # Словарь для правильного отображения флэйворов в LaTeX
         flavor_latex = {
@@ -36,7 +90,6 @@ class NeutrinoOscillationShorts_e(Scene):
         tex_flavor = flavor_latex.get(initial_flavor, initial_flavor)
 
         # -------------------- calculation logic --------------------
-        n_grid = 20000
         x_grid = np.linspace(0.0, n_periods, n_grid)
         P_grid = prob_row_x(
             initial_flavor, x_grid,
@@ -60,12 +113,18 @@ class NeutrinoOscillationShorts_e(Scene):
             np.array([2.9, 5.02, 0.0]),
         ).set_stroke(color=GRAY_B, width=3, opacity=0.9)
 
-        tri.scale(1.15).move_to(ORIGIN).shift(UP * 0.4)
+        tri.scale(ui["triangle_scale"]).move_to(ORIGIN).shift(UP * ui["triangle_shift_up"])
         v = tri.get_vertices()
+        center = tri.get_center()
 
-        lab_e = MathTex(r"\nu_e", color=YELLOW).scale(1.3).move_to(v[0] + DOWN*0.6 + LEFT*0.2)
-        lab_m = MathTex(r"\nu_\mu", color=BLUE).scale(1.3).move_to(v[1] + DOWN*0.6 + RIGHT*0.2)
-        lab_t = MathTex(r"\nu_\tau", color=PURPLE).scale(1.3).move_to(v[2] + UP*0.7)
+        def label_on_radius(tex, color, vertex, offset=0.5, scale=1.3):
+            direction = vertex - center
+            direction /= np.linalg.norm(direction)
+            return MathTex(tex, color=color).scale(scale).move_to(vertex + direction * offset)
+
+        lab_e = label_on_radius(r"\nu_e", YELLOW, v[0], offset=0.5)
+        lab_m = label_on_radius(r"\nu_\mu", BLUE, v[1], offset=0.5)
+        lab_t = label_on_radius(r"\nu_\tau", PURPLE, v[2], offset=0.6)
 
         levels = [0.2, 0.4, 0.6, 0.8]
         iso_lines = VGroup()
@@ -83,9 +142,12 @@ class NeutrinoOscillationShorts_e(Scene):
             pe, pm, pt = P_of_x(x_tracker.get_value())
             return pe*v[0] + pm*v[1] + pt*v[2]
 
-        dot = always_redraw(lambda: Dot(get_pos(), radius=0.12, color=WHITE))
-        trace = TracedPath(dot.get_center, dissipating_time=3.0, stroke_width=5, stroke_color=WHITE)
-        ghost = TracedPath(dot.get_center, dissipating_time=8.0, stroke_width=12, stroke_opacity=0.1, stroke_color=WHITE)
+        dot = always_redraw(lambda: Dot(get_pos(), radius=ui["dot_radius"], color=WHITE))
+        trace = TracedPath(dot.get_center, dissipating_time=ui["trace_time"],
+                        stroke_width=ui["trace_width"], stroke_color=WHITE)
+        ghost = TracedPath(dot.get_center, dissipating_time=ui["ghost_time"],
+                        stroke_width=ui["ghost_width"], stroke_opacity=ui["ghost_opacity"],
+                        stroke_color=WHITE)
         
         self.add(ghost, trace, dot)
 
