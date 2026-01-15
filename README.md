@@ -58,4 +58,3 @@ a reference is appreciated but not required.
 
 Dmitry V. Naumov  
 Physics, neutrinos, detectors, and visual intuition
-
