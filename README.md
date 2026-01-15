@@ -22,13 +22,9 @@ this repository is meant to save you time.
 
 Typical topics include:
 
-- Neutrino oscillations (two flavors)
-▶️ [watch on GitHub](https://github.com/user-attachments/assets/49049ebe-89f7-47b8-8148-314aeb72f24d)
-
-
-- Nuclear and stellar reaction chains  
-- Particle tracks and cascades  
-- ...
+- Neutrino oscillations (two flavors) [▶️](https://github.com/user-attachments/assets/49049ebe-89f7-47b8-8148-314aeb72f24d)
+- Neutrino oscillations (three flavors) [▶️](https://github.com/user-attachments/assets/72214f5f-e507-4d14-8b26-bb1a560268fd)
+- Air shower  [▶️](https://github.com/user-attachments/assets/a1757d30-a8c6-41a5-9c0d-678bc30f3b19)
 
 ## Requirements
 
