@@ -24,6 +24,7 @@ Typical topics include:
 
 - [▶️](https://github.com/user-attachments/assets/49049ebe-89f7-47b8-8148-314aeb72f24d) Neutrino oscillations (two flavors)
 - [▶️](https://github.com/user-attachments/assets/72214f5f-e507-4d14-8b26-bb1a560268fd) Neutrino oscillations (three flavors)
+- [▶️](https://github.com/user-attachments/assets/1a15ad37-b2d1-41b9-891a-f90e4c0b36ad) Mass hierarchy as a balance
 - [▶️](https://github.com/user-attachments/assets/a1757d30-a8c6-41a5-9c0d-678bc30f3b19) Air shower
 
 ## Requirements
@@ -32,6 +33,9 @@ Typical topics include:
 - Manim (community edition)
 
 Each script is self-contained and can be adapted independently.
+
+
+
 
 ---
 
