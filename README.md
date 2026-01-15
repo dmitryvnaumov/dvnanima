@@ -22,7 +22,9 @@ this repository is meant to save you time.
 
 Typical topics include:
 
-- Neutrino oscillations 
+- Neutrino oscillations (two flavors)
+▶️ [video (mp4)](https://github.com/dmitryvnaumov/dvnanima/tree/main/neutrino_oscillations_phases/preview.mp4)
+
 - Nuclear and stellar reaction chains  
 - Particle tracks and cascades  
 - ...
