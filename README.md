@@ -20,12 +20,18 @@ this repository is meant to save you time.
 
 ## Contents
 
-- [▶️](https://github.com/user-attachments/assets/49049ebe-89f7-47b8-8148-314aeb72f24d) Neutrino oscillations (two flavors)
-- [▶️](https://github.com/user-attachments/assets/72214f5f-e507-4d14-8b26-bb1a560268fd) Neutrino oscillations (three flavors)
-- [▶️](https://github.com/user-attachments/assets/1a15ad37-b2d1-41b9-891a-f90e4c0b36ad) Mass hierarchy as a balance
-- [▶️](https://github.com/user-attachments/assets/a1757d30-a8c6-41a5-9c0d-678bc30f3b19) Air shower
-- [▶️](https://github.com/user-attachments/assets/909378ca-5703-454a-855a-cd973d55af60) Capacitor in AC chain
-- [▶️](https://github.com/user-attachments/assets/9e5b2a2d-98bc-41df-88bf-92472e46e699) Diode in AC chain
+## 🎥 Animation Gallery
+
+| Topic | Source Code Folder | Preview |
+| :--- | :--- | :--- |
+| **Neutrino Oscillations (2 Flavors)** | [`/neutrino_oscillations`](./neutrino_oscillations) | [▶️ Watch](https://github.com/user-attachments/assets/49049ebe-89f7-47b8-8148-314aeb72f24d) |
+| **Neutrino Oscillations (3 Flavors)** | [`/neutrino_oscillations_phases`](./neutrino_oscillations_phases) | [▶️ Watch](https://github.com/user-attachments/assets/72214f5f-e507-4d14-8b26-bb1a560268fd) |
+| **Mass Hierarchy** | [`/mass_hierarchy`](./mass_hierarchy) | [▶️ Watch](https://github.com/user-attachments/assets/1a15ad37-b2d1-41b9-891a-f90e4c0b36ad) |
+| **Air Shower** | [`/airshower`](./airshower) | [▶️ Watch](https://github.com/user-attachments/assets/a1757d30-a8c6-41a5-9c0d-678bc30f3b19) |
+| **Capacitor in AC** | [`/capacitor`](./capacitor) | [▶️ Watch](https://github.com/user-attachments/assets/909378ca-5703-454a-855a-cd973d55af60) |
+| **Diode in AC** | [`/diode`](./diode) | [▶️ Watch](https://github.com/user-attachments/assets/9e5b2a2d-98bc-41df-88bf-92472e46e699) |
+| **Peak Detector** | [`/peak_detector`](./peak_detector) | [▶️ Watch](https://github.com/user-attachments/assets/76f2c6af-984f-40c6-a10a-fff6faf40fa5) |
+
 
 ## Requirements
 
