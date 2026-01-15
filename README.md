@@ -31,7 +31,7 @@ this repository is meant to save you time.
 | **Capacitor in AC** | [`/capacitor`](./capacitor) | [▶️ Watch](https://github.com/user-attachments/assets/909378ca-5703-454a-855a-cd973d55af60) |
 | **Diode in AC** | [`/diode`](./diode) | [▶️ Watch](https://github.com/user-attachments/assets/9e5b2a2d-98bc-41df-88bf-92472e46e699) |
 | **Peak Detector** | [`/peak_detector`](./peak_detector) | [▶️ Watch](https://github.com/user-attachments/assets/76f2c6af-984f-40c6-a10a-fff6faf40fa5) |
-| **CockroWalton scheme** | [`/cockroftwalton`](./cockroftwalton) | [▶️ Watch](https://github.com/user-attachments/assets/2a8743d8-76ee-46e4-b2ae-6c696346fead) |
+| **CockroftWalton scheme** | [`/cockroftwalton`](./cockroftwalton) | [▶️ Watch](https://github.com/user-attachments/assets/2a8743d8-76ee-46e4-b2ae-6c696346fead) |
 
 
 
