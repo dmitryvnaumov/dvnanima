@@ -26,8 +26,14 @@ Typical topics include:
 - [▶️](https://github.com/user-attachments/assets/72214f5f-e507-4d14-8b26-bb1a560268fd) Neutrino oscillations (three flavors)
 - [▶️](https://github.com/user-attachments/assets/1a15ad37-b2d1-41b9-891a-f90e4c0b36ad) Mass hierarchy as a balance
 - [▶️](https://github.com/user-attachments/assets/a1757d30-a8c6-41a5-9c0d-678bc30f3b19) Air shower
+- [▶️](https://github.com/user-attachments/assets/909378ca-5703-454a-855a-cd973d55af60) Capacitor in AC chain
+- 
 
 ## Requirements
+
+
+
+
 
 - Python 3.10+
 - Manim (community edition)
