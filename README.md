@@ -32,18 +32,10 @@ this repository is meant to save you time.
 | **Diode in AC** | [`/diode`](./diode) | [▶️ Watch](https://github.com/user-attachments/assets/9e5b2a2d-98bc-41df-88bf-92472e46e699) |
 | **Peak Detector** | [`/peak_detector`](./peak_detector) | [▶️ Watch](https://github.com/user-attachments/assets/76f2c6af-984f-40c6-a10a-fff6faf40fa5) |
 | **CockroftWalton scheme** | [`/cockroftwalton`](./cockroftwalton) | [▶️ Watch](https://github.com/user-attachments/assets/2a8743d8-76ee-46e4-b2ae-6c696346fead) |
-
+| **pp cycle** | [`/pp_cycle`](./pp_cycle) | [▶️ Watch](https://github.com/user-attachments/assets/f31772dc-973d-4129-a757-36e580aa545a) [▶️ Watch](https://github.com/user-attachments/assets/6a1350ed-b84b-490b-bcfb-0578e2f32ab3) [▶️ Watch](https://github.com/user-attachments/assets/204bb8d2-922b-4018-afcf-ab4ce6f5c3d4)|
 
 
 ## Requirements
-
-
-
-
-
-
-
-
 
 - Python 3.10+
 - Manim (community edition)
