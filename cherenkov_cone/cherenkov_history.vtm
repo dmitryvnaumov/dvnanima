@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<VTKFile type="vtkMultiBlockDataSet" version="1.0" byte_order="LittleEndian" header_type="UInt32" compressor="vtkZLibDataCompressor">
+  <vtkMultiBlockDataSet>
+    <DataSet index="0" name="apex_path" file="cherenkov_history/cherenkov_history_0.vtp"/>
+    <DataSet index="1" name="intersection_points" file="cherenkov_history/cherenkov_history_1.vtp"/>
+  </vtkMultiBlockDataSet>
+</VTKFile>

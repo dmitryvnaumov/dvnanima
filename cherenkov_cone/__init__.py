@@ -1,0 +1,1 @@
+"""Cherenkov cone prototype package."""

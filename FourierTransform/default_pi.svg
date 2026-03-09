@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <path d="M35 45
+           L165 45
+           L165 70
+           L140 70
+           L140 155
+           C140 170 132 178 118 178
+           C104 178 96 170 96 155
+           L96 70
+           L72 70
+           L72 155
+           C72 170 64 178 50 178
+           C36 178 28 170 28 155
+           L28 70
+           L35 70
+           Z"
+        fill="none" stroke="black" stroke-width="6"/>
+</svg>
